@@ -1,0 +1,98 @@
+import pandas as pd
+stock_data = pd.read_csv('Stock ratio data set.csv', index_col=0)
+df=pd.DataFrame(stock_data)
+print (df)
+stock_data[['company','sector']]
+stock_data[1:5]
+stock_data.loc[['AAPL','ABNB','ADI'],['sector','asset_turnover_2020']]
+stock_data.loc[:,['sector','asset_turnover_2020']]
+import pandas as pd
+import numpy as np
+stock_data = pd.read_csv('Stock ratio data set.csv')
+print(stock_data.head())
+print(stock_data.shape)
+missing_values_count = stock_data.isnull().sum()
+print(missing_values_count[0:5])
+droprows= stock_data.dropna()
+print(stock_data.shape,droprows.shape)
+dropcolumns = stock_data.dropna(axis=1)
+print(stock_data.shape,dropcolumns.shape)
+cleaned_data = stock_data.fillna(0)
+print(cleaned_data)
+drop_duplicates= stock_data.drop_duplicates()
+print(stock_data.shape,drop_duplicates.shape)
+Import pandas as pd
+p1 = pd.DataFrame({"sector": ['Information Technology', 'Consumer Discretionary'],
+                    "asset_turnover_2019": [0.74, 0.64,]})
+
+p2 = pd.DataFrame({"sector": ['Consumer Staples', ' Utilities'],
+                    "asset_turnover_2019": [1.77, 1.16,]})
+                    print(p1)
+                    pd.concat([p1,p2])
+                    pd.concat([p1,p2], ignore_index=True)Apple_AT_21 = 1.08 
+Airbnb_AT_21 = 0.50  
+
+if (Apple_AT_21 > Airbnb_AT_21) :
+ print('Apple had a greater asset turnover ratio than Airbnb in the year 2021')
+ Good_asset_turnover_ratio_tech = 1.0
+Apple_AT_21 = 1.08
+if(Apple_AT_21>= Good_asset_turnover_ratio_tech):
+             print('Most analysts consider this a good asset turnover ratio for the tech industry')
+             AdobeInc_AT_21= 0.61
+
+if(AdobeInc_AT_21> 1):
+     print('Most analysts consider a ratio above 1 a good asset turnover ratio for the tech industry')
+else:
+     print('Anything below 1 is not considered a good asset turnover ratio for the tech industry')
+     stock_data.groupby('sector').mean()
+     stock_data.groupby(['sector','company']).mean()
+     def say_symbol(symbol_name):
+    print('Symbol ' + symbol_name)
+    def say_AT(name):
+    print('Asset Turnover '  +  name)
+    y_AT('Apple')
+    import numpy as np
+yoy_revenue_growth_2020=[11.94, 31.27, 16.86,-6.25,4.84] 
+np_yoy_revenue_growth_2020= np.array(yoy_revenue_growth_2020)
+np_yoy_revenue_growth_2020>20
+np.mean(yoy_revenue_growth_2020)
+np.median(yoy_revenue_growth_2020)
+np.std(yoy_revenue_growth_2020)
+yoy_revenue_growth_2020=[11.94, 31.27, 16.86,-6.25,4.84] 
+yoy_revenue_growth_2020[1]
+yoy_revenue_growth_2020=[11.94, 31.27, 16.86,-6.25,4.84] 
+yoy_revenue_growth_2020[0:3]
+yoy_revenue_growth_2020 + [6.57,22.65]
+import matplotlib.pyplot as plt
+plt.xlabel('Asset Turnover')
+plt.ylabel('year')
+plt.title('Apple Asset Turnover ratio from 2017-2021')
+Year= [2017, 2018, 2019, 2020, 2021]
+AT= [0.66, 0.72, 0.74, 0.83, 1.08]
+plt.plot(AT, year)
+plt.show()
+import numpy as np
+import matplotlib.pyplot as plt
+Asset_turnover_2018 = [0.72, 0.55, 0.54, 0.3, 0.34]
+Companies = ('Apple', 'Airbnb', 'Adobe Inc', 'Analog Devices', 'ADP')
+y_pos = np.arange(len(Companies))
+plt.bar(y_pos, Asset_turnover_2018)
+plt.title('Asset Turnover Ratio 2018')
+plt.xticks(y_pos, Companies)
+plt.show()
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+Apple_AT = {'Year' : [2017, 2018, 2019, 2020, 2021], 
+          'AT': [0.66, 0.72, 0.74, 
+                    0.83, 1.08]}
+df = pd.DataFrame(Apple_AT)
+plt.xlabel('Year (2017_2021)')
+plt.ylabel('AT')
+sns.scatterplot(data=df, x='Year', y='AT')
+plt.show()
+sns.lmplot(x='Year',y='AT',data=df)
+plt.xlabel('Year (2017_2021)')
+plt.ylabel('AT')
+plt.show()
